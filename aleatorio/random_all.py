@@ -3,7 +3,6 @@ from pathlib import Path
 import string
 import random
 import os
-import sys
 
 #Funcion para rellenar archivos con caracteres aleatorios 
 def rellenar(numero_caracter, nombre_archivo):
