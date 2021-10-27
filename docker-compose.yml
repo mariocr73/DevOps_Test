@@ -1,4 +1,4 @@
-version "3.9"
+version: "3.9"
 
 services:
   monitor:
@@ -7,8 +7,8 @@ services:
     logging:
       driver: "json.file"
       options:
-        max-file: 5
-        max-size: 200m
+        max-file: "5"
+        max-size: "200m"
     volumes:
       - data-volume:/workdir
 
