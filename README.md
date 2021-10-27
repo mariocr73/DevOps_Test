@@ -4,10 +4,9 @@
 ### Teniendo en cuenta la arquitectura de microservicios se pueden monitorear varios componentes.
 ### Monitoreo de Kafka
 Cada mensaje de Kafka tiene una compensación. La compensación es básicamente un identificador que señala dónde se encuentra el mensaje en la secuencia de mensajes. Los productores agregan mensajes a los temas, y cada uno recibe una compensación nueva. La compensación más reciente en una partición muestra la ID más reciente. Los consumidores reciben los mensajes de los temas, y la diferencia entre la compensación más reciente y la compensación que recibe el consumidor es el retraso del consumidor. Indefectiblemente, los consumidores estarán un poco por detrás de los productores. A lo que se debe prestar atención es a cuando el retraso del consumidor aumenta sin fin, debido a que esto indica que probablemente necesitas más consumidores para procesar la carga.
-Se puede por tanto utilizar algunas herramientas para revisar metricas como Metribeat y Filebeat para los logs.
-Tambien con herramientas opensource como ELK (ElasticSearch, Logstash y Kibana.
+Se puede por tanto utilizar algunas herramientas para revisar métricas como Metribeat y Filebeat para los logs Tambien con herramientas opensource como ELK (ElasticSearch, Logstash y Kibana). También la integración de herramientas por ejemplo Prometheus para recolectar las métricas y Grafana para visualizarlas.
 
-![Esta es una imagen](https://dc722jrlp2zu8.cloudfront.net/media/cache/ac/fb/acfb8540e183c26ce471e0370d80d470.webp)
+![ELK](https://github.com/mariocr73/DevOps_Test/blob/Development/figuras/ELK.jpg)
 
 ### Monitoreo de microservicios basados en JVM
 Teniendo en cuenta la arquitectura de microservicios basados en JVM es importante realizar un monitoreo del cluster donde corren y una solución Open Source puede ser  Stagemonitor, con el puede ver los datos históricos o en directo del clúster o del servidor de desarrollo, crear alertas personalizadas y establecer umbrales para cada métrica de JVM. También permite crear cuadros de mando personalizados para visualizar y analizar las métricas.
