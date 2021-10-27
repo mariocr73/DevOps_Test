@@ -25,7 +25,7 @@ Para realizar la tarea propuesta una alternativa propia de UNIX es utilizar el c
               Delete files; true if removal succeeded.  If the removal failed, an error message is issued.  If -delete fails, find's exit sta‐
               tus will be nonzero (when it eventually exits).  Use of -delete automatically turns on the `-depth' option.
 
--exec command {} +
+- exec command {} +
               This  variant  of  the -exec action runs the specified command on the selected files, but the command line is built by appending
               each selected file name at the end; the total number of invocations of the command will be much less than the number of  matched
               files.   The  command  line is built in much the same way that xargs builds its command lines.  Only one instance of `{}' is al‐
