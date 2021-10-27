@@ -1,0 +1,25 @@
+version "3.9"
+
+services:
+  monitor:
+    build: aleatorio
+    container_name: script_aleatorio
+    logging:
+      driver: "json.file"
+      options:
+        max-file: 5
+        max-size: 200m
+    volumes:
+      - data-volume:/workdir
+
+  web:
+    image: nginx
+    container_name: webserver
+    restart: unless-stopped
+    volumes:
+      - data-volume:/workdir
+    ports:
+      - "8080:80"
+
+volumes:
+  data-volume:
