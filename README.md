@@ -1,16 +1,25 @@
 # DevOps Technical Test
 ## GENERAL QUESTIONS
-- You will be in charge of running a set of JVM-based microservices connected to MongoDB, exchanging messages through a kafka broker and communicating with external clients using HTTP Restful Services
+- You will be in charge of running a set of JVM-based microservices connected to MongoDB, exchanging messages through a kafka broker and communicating with external clients using HTTP Restful Services.
+### Teniendo en cuenta la arquitectura de microservicios se pueden monitorear varios componentes.
+### Monitoreo de Kafka
+Cada mensaje de Kafka tiene una compensación. La compensación es básicamente un identificador que señala dónde se encuentra el mensaje en la secuencia de mensajes. Los productores agregan mensajes a los temas, y cada uno recibe una compensación nueva. La compensación más reciente en una partición muestra la ID más reciente. Los consumidores reciben los mensajes de los temas, y la diferencia entre la compensación más reciente y la compensación que recibe el consumidor es el retraso del consumidor. Indefectiblemente, los consumidores estarán un poco por detrás de los productores. A lo que se debe prestar atención es a cuando el retraso del consumidor aumenta sin fin, debido a que esto indica que probablemente necesitas más consumidores para procesar la carga.
+Se puede por tanto utilizar algunas herramientas para revisar metricas como Metribeat y Filebeat para los logs.
+Tambien con herramientas opensource como ELK (ElasticSearch, Logstash y Kibana.
 
+![Esta es una imagen](https://dc722jrlp2zu8.cloudfront.net/media/cache/ac/fb/acfb8540e183c26ce471e0370d80d470.webp)
 
+### Monitoreo de microservicios basados en JVM
+Teniendo en cuenta la arquitectura de microservicios basados en JVM es importante realizar un monitoreo del cluster donde corren y una solución Open Source puede ser  Stagemonitor, con el puede ver los datos históricos o en directo del clúster o del servidor de desarrollo, crear alertas personalizadas y establecer umbrales para cada métrica de JVM. También permite crear cuadros de mando personalizados para visualizar y analizar las métricas.
 
-
-
-
-
-
-
-
+### Monitoreo de MongoDB
+Finalmente y no menos importante monitorear el motor de bases de datos MongoDB, que incluyen:
+- Estadísticas de desempeño
+- Uso de recursos (uso de CPU, memoria disponible y uso de red)
+- Estadísticas de afirmación
+- Estadísticas de reproducción
+- Saturación de recursos
+- Operaciones de rendimiento
 
 - Provide a Linux command to delete all files which have been accessed between 20 and 30 days ago. Explain your command.
 Para realizar la tarea propuesta una alternativa propia de UNIX es utilizar el comando find con sus opciones:
