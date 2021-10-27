@@ -5,7 +5,7 @@
 ### Monitoreo de Kafka
 Cada mensaje de Kafka tiene una compensación. La compensación es básicamente un identificador que señala dónde se encuentra el mensaje en la secuencia de mensajes. Los productores agregan mensajes a los temas, y cada uno recibe una compensación nueva. La compensación más reciente en una partición muestra la ID más reciente. Los consumidores reciben los mensajes de los temas, y la diferencia entre la compensación más reciente y la compensación que recibe el consumidor es el retraso del consumidor. Indefectiblemente, los consumidores estarán un poco por detrás de los productores. A lo que se debe prestar atención es a cuando el retraso del consumidor aumenta sin fin, debido a que esto indica que probablemente necesitas más consumidores para procesar la carga.
 Se puede por tanto utilizar algunas herramientas para revisar metricas como Metribeat y Filebeat para los logs.
-Tambien con herramientas opensource como ELK (ElasticSearch, Logstash y Kibana.
+Tambien con herramientas opensource como ELK (ElasticSearch, Logstash y Kibana).
 
 ![Esta es una imagen](https://dc722jrlp2zu8.cloudfront.net/media/cache/ac/fb/acfb8540e183c26ce471e0370d80d470.webp)
 
