@@ -15,10 +15,10 @@
 - Provide a Linux command to delete all files which have been accessed between 20 and 30 days ago. Explain your command.
 Para realizar la tarea propuesta una alternativa propia de UNIX es utilizar el comando find con sus opciones:
 
-**`find / -atime 10 -atime 30 -delete `** 
+**`find / -atime 20 -atime 30 -delete `** 
 or
 
-**`find / -atime 10 -atime 30 -exec rm {} \`**
+**`find / -atime 20 -atime 30 -exec rm {} \`**
 
 - atime n
               File was last accessed n*24 hours ago.  When find figures out how many 24-hour periods ago the file was last accessed, any frac‐
