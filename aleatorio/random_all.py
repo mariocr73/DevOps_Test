@@ -33,7 +33,7 @@ for i in range(numero_arch):
   if i == numero_arch:
     break
   
-  tf = tempfile.NamedTemporaryFile(mode='w+b', prefix='New', dir='/tmp', delete=False)
+  tf = tempfile.NamedTemporaryFile(mode='w+b', prefix='New', dir='/workdir', delete=False)
   l = tf.name
   array_archivos.append(l)
   for j in array_archivos:
